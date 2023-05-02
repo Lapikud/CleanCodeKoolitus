@@ -41,7 +41,7 @@ public class Employee {
 		double fundedPension = (double) grossSalary / 100 * 2;
 
 		// arvuta töötuskindlustusmakse (1,6%)
-		double unemploymentEnsurance = (double) grossSalary / 1000 * 16;
+		double unemploymentEnsurance = (double) grossSalary / 100 * 1.6;
 
 		// arvuta maksuvabatulu
 		double taxFreeSalary;
