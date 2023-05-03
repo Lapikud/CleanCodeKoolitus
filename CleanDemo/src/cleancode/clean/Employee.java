@@ -1,7 +1,7 @@
 package cleancode.clean;
 
 public class Employee {
-	private String name;
+	private final String name;
 	private String title;
 	private int monthlyGrossSalary;
 
@@ -12,10 +12,6 @@ public class Employee {
 
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String getTitle() {
