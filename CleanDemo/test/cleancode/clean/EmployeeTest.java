@@ -17,13 +17,15 @@ public class EmployeeTest {
 	public void testEmployeeSalary() {
 		Employee juhan = new Employee("Juhan", "Elektriinsener");
 		juhan.setMonthlyGrossSalary(1900);
-		Assert.assertEquals(juhan.calculateNetSalary(), 1494.35, 0.01);
+		NetSalaryCalculator netSalaryCalculator = new NetSalaryCalculator(juhan.getMonthlyGrossSalary());
+		Assert.assertEquals(netSalaryCalculator.calculateNetSalary(), 1494.35, 0.01);
 	}
 
 	@Test
 	public void testEmployeeSalaryNoTaxFreeIncome() {
 		Employee madis = new Employee("madis", "IT-arhitekt");
 		madis.setMonthlyGrossSalary(2200);
-		Assert.assertEquals(madis.calculateNetSalary(), 1696.64, 0.01);
+		NetSalaryCalculator netSalaryCalculator = new NetSalaryCalculator(madis.getMonthlyGrossSalary());
+		Assert.assertEquals(netSalaryCalculator.calculateNetSalary(), 1696.64, 0.01);
 	}
 }

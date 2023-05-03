@@ -33,32 +33,4 @@ public class Employee {
 	public void setMonthlyGrossSalary(int monthlyGrossSalary) {
 		this.monthlyGrossSalary = monthlyGrossSalary;
 	}
-
-	public double calculateNetSalary() {
-		int grossSalary = getMonthlyGrossSalary();
-
-		// arvuta kogumispension (2%)
-		double fundedPension = (double) grossSalary / 100 * 2;
-
-		// arvuta töötuskindlustusmakse (1,6%)
-		double unemploymentEnsurance = (double) grossSalary / 100 * 1.6;
-
-		// arvuta maksuvabatulu
-		double taxFreeSalary;
-		if (grossSalary <= 1200) {
-			taxFreeSalary = 654;
-		} else if (grossSalary > 1200 && grossSalary <= 2100) {
-			taxFreeSalary = 654 - (double) 654 / 900 * (grossSalary - 1200);
-		} else {
-			taxFreeSalary = 0;
-		}
-
-		// arvuta ja võta maha tulumaks
-		double salaryToTakeTaxFrom = grossSalary - fundedPension - unemploymentEnsurance - taxFreeSalary;
-		double incomeTax = salaryToTakeTaxFrom / 5;
-
-		double netSalary = grossSalary - fundedPension - unemploymentEnsurance - incomeTax;
-
-		return netSalary;
-	}
 }
